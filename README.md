@@ -1,5 +1,5 @@
 
-# Controle de Estoque
+# Horkut
 
 Aplicação consiste em uma rede social de cultivo de horta indoor.
 
