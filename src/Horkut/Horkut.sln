@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horkut.Web", "Horkut.Web.csproj", "{4A9F9DCA-8A9D-4E1C-A3EB-B8760BA56300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horkut.Service", "Horkut.Service\Horkut.Service.csproj", "{32013CC6-DD7A-4C35-B766-01946EEFDAAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horkut.Repository", "Horkut.Repository\Horkut.Repository.csproj", "{464A5AA8-52D4-402C-8980-FCBC5A8BA2A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horkut.Tests", "Horkut.Tests\Horkut.Tests.csproj", "{B5F29F5B-FDFF-4FF6-9AA5-1BFA3F644A24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horkut.Domain", "Horkut.Domain\Horkut.Domain.csproj", "{967FC2CC-ECB8-4BCD-ABD6-3C9BAE7DBE13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horkut. CrossCutting", "Horkut. CrossCutting\Horkut. CrossCutting.csproj", "{09AE83C8-018D-4327-A5D8-E1E9A3F71169}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horkut.API", "Horkut.API\Horkut.API.csproj", "{8E30FBB1-3686-47CF-AFF6-FA833E076468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A9F9DCA-8A9D-4E1C-A3EB-B8760BA56300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9F9DCA-8A9D-4E1C-A3EB-B8760BA56300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9F9DCA-8A9D-4E1C-A3EB-B8760BA56300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9F9DCA-8A9D-4E1C-A3EB-B8760BA56300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32013CC6-DD7A-4C35-B766-01946EEFDAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32013CC6-DD7A-4C35-B766-01946EEFDAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32013CC6-DD7A-4C35-B766-01946EEFDAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32013CC6-DD7A-4C35-B766-01946EEFDAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{464A5AA8-52D4-402C-8980-FCBC5A8BA2A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464A5AA8-52D4-402C-8980-FCBC5A8BA2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464A5AA8-52D4-402C-8980-FCBC5A8BA2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464A5AA8-52D4-402C-8980-FCBC5A8BA2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5F29F5B-FDFF-4FF6-9AA5-1BFA3F644A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F29F5B-FDFF-4FF6-9AA5-1BFA3F644A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5F29F5B-FDFF-4FF6-9AA5-1BFA3F644A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5F29F5B-FDFF-4FF6-9AA5-1BFA3F644A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{967FC2CC-ECB8-4BCD-ABD6-3C9BAE7DBE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{967FC2CC-ECB8-4BCD-ABD6-3C9BAE7DBE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{967FC2CC-ECB8-4BCD-ABD6-3C9BAE7DBE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{967FC2CC-ECB8-4BCD-ABD6-3C9BAE7DBE13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09AE83C8-018D-4327-A5D8-E1E9A3F71169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09AE83C8-018D-4327-A5D8-E1E9A3F71169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09AE83C8-018D-4327-A5D8-E1E9A3F71169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09AE83C8-018D-4327-A5D8-E1E9A3F71169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E30FBB1-3686-47CF-AFF6-FA833E076468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E30FBB1-3686-47CF-AFF6-FA833E076468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E30FBB1-3686-47CF-AFF6-FA833E076468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E30FBB1-3686-47CF-AFF6-FA833E076468}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

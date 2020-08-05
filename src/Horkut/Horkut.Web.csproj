@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>aspnet-Horkut.Web-A75BB444-1943-495E-AAF6-3B8E44F46072</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+        <None Remove="Horkut.Domain\**" />
+        <None Remove="Horkut.Repository\**" />
+        <None Remove="Horkut.Service\**" />
+        <None Remove="Horkut.Tests\**" />
+        <None Remove="Horkut. CrossCutting\**" />
+        <None Remove="Horkut.API\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.5" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0-preview.7.20365.19" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Horkut.Domain\**" />
+      <Compile Remove="Horkut.Repository\**" />
+      <Compile Remove="Horkut.Service\**" />
+      <Compile Remove="Horkut.Tests\**" />
+      <Compile Remove="Horkut. CrossCutting\**" />
+      <Compile Remove="Horkut.API\**" />
+      <Compile Remove="Data\ApplicationDbContext.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Horkut.Domain\**" />
+      <EmbeddedResource Remove="Horkut.Repository\**" />
+      <EmbeddedResource Remove="Horkut.Service\**" />
+      <EmbeddedResource Remove="Horkut.Tests\**" />
+      <EmbeddedResource Remove="Horkut. CrossCutting\**" />
+      <EmbeddedResource Remove="Horkut.API\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Horkut.Domain\**" />
+      <Content Remove="Horkut.Repository\**" />
+      <Content Remove="Horkut.Service\**" />
+      <Content Remove="Horkut.Tests\**" />
+      <Content Remove="Horkut. CrossCutting\**" />
+      <Content Remove="Horkut.API\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Horkut.Domain\obj\Horkut.Domain.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Domain\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Domain\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Repository\obj\Horkut.Repository.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Repository\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Repository\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Service\obj\Horkut.Service.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Service\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Service\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Tests\obj\Horkut.Tests.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Tests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Horkut.Tests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Horkut. CrossCutting\bin\Debug\netcoreapp3.1\Horkut. CrossCutting.deps.json" />
+      <_ContentIncludedByDefault Remove="Horkut. CrossCutting\obj\Horkut. CrossCutting.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Horkut. CrossCutting\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Horkut. CrossCutting\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.API\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="Horkut.API\appsettings.json" />
+      <_ContentIncludedByDefault Remove="Horkut.API\obj\Horkut.API.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.API\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Horkut.API\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Horkut.API\Properties\launchSettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="Horkut.Service\Horkut.Service.csproj" />
+    </ItemGroup>
+
+</Project>

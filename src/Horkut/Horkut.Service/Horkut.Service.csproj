@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Horkut.Domain\Horkut.Domain.csproj" />
+      <ProjectReference Include="..\Horkut.Repository\Horkut.Repository.csproj" />
+    </ItemGroup>
+
+</Project>
