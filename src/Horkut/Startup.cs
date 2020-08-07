@@ -33,14 +33,15 @@ namespace Horkut.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IAccountRepository, ApplicationDbContext>();
+            services.AddTransient<IUserStore<Account>, AccountRepository>();
+            services.AddTransient<IRoleStore<Profile>, ProfileRepository>();
+            services.AddTransient<IAccountIdentityManager, AccountIdentityManager>();
             services.AddTransient<IAccountService, AccountService>();
                 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             
-            services.AddIdentity<Account, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+            services.AddIdentity<Account, Profile>()
                 .AddDefaultTokenProviders();
 
             services.ConfigureApplicationCookie(options =>
