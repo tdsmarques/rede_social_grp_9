@@ -13,6 +13,7 @@
         <None Remove="Horkut.Tests\**" />
         <None Remove="Horkut. CrossCutting\**" />
         <None Remove="Horkut.API\**" />
+        <None Remove="Data\Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -20,6 +21,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0-preview.7.20365.19" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.5" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5" />
     </ItemGroup>
 
@@ -31,6 +33,7 @@
       <Compile Remove="Horkut. CrossCutting\**" />
       <Compile Remove="Horkut.API\**" />
       <Compile Remove="Data\ApplicationDbContext.cs" />
+      <Compile Remove="Data\Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -40,6 +43,7 @@
       <EmbeddedResource Remove="Horkut.Tests\**" />
       <EmbeddedResource Remove="Horkut. CrossCutting\**" />
       <EmbeddedResource Remove="Horkut.API\**" />
+      <EmbeddedResource Remove="Data\Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -49,6 +53,8 @@
       <Content Remove="Horkut.Tests\**" />
       <Content Remove="Horkut. CrossCutting\**" />
       <Content Remove="Horkut.API\**" />
+      <Content Remove="Views\Account\Login.cshtml" />
+      <Content Remove="Data\Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -78,6 +84,11 @@
 
     <ItemGroup>
       <ProjectReference Include="Horkut.Service\Horkut.Service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Data" />
+      <Folder Include="Views\Account" />
     </ItemGroup>
 
 </Project>

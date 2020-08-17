@@ -9,7 +9,7 @@ namespace Horkut.Repository.Account
     {
         public void Dispose()
         {
-             
+             throw new System.NotImplementedException();
         }
 
         public Task<IdentityResult> CreateAsync(Profile role, CancellationToken cancellationToken)

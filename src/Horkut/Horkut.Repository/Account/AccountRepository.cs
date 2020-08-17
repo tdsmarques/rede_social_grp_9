@@ -1,10 +1,11 @@
 using System.Threading;
 using System.Threading.Tasks;
+using Horkut.Domain.Account.Repository;
 using Microsoft.AspNetCore.Identity;
 
 namespace Horkut.Repository.Account
 {
-    public class AccountRepository : IUserStore<Domain.Account.Account>
+    public class AccountRepository : IUserStore<Domain.Account.Account>, IAccountRepository
     {
         public void Dispose()
         {
