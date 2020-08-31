@@ -1,0 +1,53 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedeSocial.Web", "RedeSocial.Web\RedeSocial.Web.csproj", "{19876342-24D4-45AD-9A70-29D8A4B70BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedeSocial.Services", "RedeSocial.Services\RedeSocial.Services.csproj", "{3E7F0D8E-AD2E-4D56-BD4D-43C185FF4BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedeSocial.Domain", "RedeSocial.Domain\RedeSocial.Domain.csproj", "{A28363E3-C113-4067-A7E5-2140F4FB6912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedeSocial.Repository", "RedeSocial.Repository\RedeSocial.Repository.csproj", "{2566DB63-72C9-449B-9C28-E35FC8CFA32C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedeSocial.Tests", "RedeSocial.Tests\RedeSocial.Tests.csproj", "{59A23B3B-C0D9-4557-998D-A69FF34F76CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedeSocial.CrossCuting", "RedeSocial.CrossCuting\RedeSocial.CrossCuting.csproj", "{32BDD9D2-CC6D-405B-AA04-BD65459C5C81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedeSocial.API", "RedeSocial.API\RedeSocial.API.csproj", "{3FCCF27B-AEC4-4415-8657-936556CB4C27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19876342-24D4-45AD-9A70-29D8A4B70BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19876342-24D4-45AD-9A70-29D8A4B70BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19876342-24D4-45AD-9A70-29D8A4B70BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19876342-24D4-45AD-9A70-29D8A4B70BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E7F0D8E-AD2E-4D56-BD4D-43C185FF4BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7F0D8E-AD2E-4D56-BD4D-43C185FF4BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7F0D8E-AD2E-4D56-BD4D-43C185FF4BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7F0D8E-AD2E-4D56-BD4D-43C185FF4BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28363E3-C113-4067-A7E5-2140F4FB6912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28363E3-C113-4067-A7E5-2140F4FB6912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28363E3-C113-4067-A7E5-2140F4FB6912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28363E3-C113-4067-A7E5-2140F4FB6912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2566DB63-72C9-449B-9C28-E35FC8CFA32C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2566DB63-72C9-449B-9C28-E35FC8CFA32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2566DB63-72C9-449B-9C28-E35FC8CFA32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2566DB63-72C9-449B-9C28-E35FC8CFA32C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A23B3B-C0D9-4557-998D-A69FF34F76CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A23B3B-C0D9-4557-998D-A69FF34F76CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A23B3B-C0D9-4557-998D-A69FF34F76CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A23B3B-C0D9-4557-998D-A69FF34F76CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BDD9D2-CC6D-405B-AA04-BD65459C5C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BDD9D2-CC6D-405B-AA04-BD65459C5C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BDD9D2-CC6D-405B-AA04-BD65459C5C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BDD9D2-CC6D-405B-AA04-BD65459C5C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FCCF27B-AEC4-4415-8657-936556CB4C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FCCF27B-AEC4-4415-8657-936556CB4C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FCCF27B-AEC4-4415-8657-936556CB4C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FCCF27B-AEC4-4415-8657-936556CB4C27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
