@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RedeSocial.Repository.Context;
 
 namespace RedeSocial.Repository.Migrations
 {
     [DbContext(typeof(RedeSocialContext))]
-    partial class RedeSocialContextModelSnapshot : ModelSnapshot
+    [Migration("20200904232315_CorrigindoEntidadesDomain")]
+    partial class CorrigindoEntidadesDomain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,13 +48,17 @@ namespace RedeSocial.Repository.Migrations
                     b.Property<Guid?>("RoleId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("RoleId1")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");
+
+                    b.HasIndex("RoleId1");
 
                     b.ToTable("Account");
                 });
@@ -70,14 +76,18 @@ namespace RedeSocial.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Role");
+                    b.ToTable("Profile");
                 });
 
             modelBuilder.Entity("RedeSocial.Domain.Account.Account", b =>
                 {
-                    b.HasOne("RedeSocial.Domain.Account.Role", "Role")
+                    b.HasOne("RedeSocial.Domain.Account.Role", null)
                         .WithMany("Accounts")
                         .HasForeignKey("RoleId");
+
+                    b.HasOne("RedeSocial.Domain.Account.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId1");
                 });
 #pragma warning restore 612, 618
         }
