@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -7,9 +9,10 @@ using Microsoft.EntityFrameworkCore;
 using RedeSocial.Domain.Account.Repository;
 using RedeSocial.Repository.Context;
 
+
 namespace RedeSocial.Repository.Account
 {
-    public class AccountRepository : IUserStore<Domain.Account.Account>, IAccountRepository
+        public class AccountRepository : IUserStore<Domain.Account.Account>, IAccountRepository
     {
         private bool disposedValue;
 
@@ -24,7 +27,7 @@ namespace RedeSocial.Repository.Account
         public async Task<IdentityResult> CreateAsync(Domain.Account.Account user, CancellationToken cancellationToken)
         {
             this.Context.Accounts.Add(user);
-            await this.Context.SaveChangesAsync();
+            this.Context.SaveChangesAsync();
             return IdentityResult.Success;
         }
 
@@ -47,7 +50,7 @@ namespace RedeSocial.Repository.Account
 
         public Task<string> GetNormalizedUserNameAsync(Domain.Account.Account user, CancellationToken cancellationToken)
         {
-            return Task.FromResult(user.Name);
+            return Task.FromResult(user.UserName);
         }
 
         public Task<string> GetUserIdAsync(Domain.Account.Account user, CancellationToken cancellationToken)
@@ -57,19 +60,19 @@ namespace RedeSocial.Repository.Account
 
         public Task<string> GetUserNameAsync(Domain.Account.Account user, CancellationToken cancellationToken)
         {
-            return Task.FromResult(user.Name.ToString());
+            return Task.FromResult(user.UserName.ToString());
         }
 
         public Task SetNormalizedUserNameAsync(Domain.Account.Account user, string normalizedName, CancellationToken cancellationToken)
         {
-            user.Name = normalizedName;
+            user.UserName = normalizedName;
             return Task.CompletedTask;
             
         }
 
         public Task SetUserNameAsync(Domain.Account.Account user, string userName, CancellationToken cancellationToken)
         {
-            user.Name = userName;
+            user.UserName = userName;
             return Task.CompletedTask;
         }
 
@@ -98,7 +101,7 @@ namespace RedeSocial.Repository.Account
         {
             return Task.FromResult(this.Context.Accounts
                                                .Include(x => x.Role)
-                                               .FirstOrDefault(x => x.Name == userName && x.Password == password));
+                                               .FirstOrDefault(x => x.UserName == userName && x.Password == password));
         }
 
 

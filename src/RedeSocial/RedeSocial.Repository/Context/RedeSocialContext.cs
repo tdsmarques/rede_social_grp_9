@@ -26,7 +26,7 @@ namespace RedeSocial.Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AccountMap());
-            modelBuilder.ApplyConfiguration(new ProfileMap());
+            modelBuilder.ApplyConfiguration(new RoleMap());
             base.OnModelCreating(modelBuilder);
         }
     }

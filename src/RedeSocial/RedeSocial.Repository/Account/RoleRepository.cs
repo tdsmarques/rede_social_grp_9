@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -6,19 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using RedeSocial.Domain.Account;
 using RedeSocial.Repository.Context;
 
+
 namespace RedeSocial.Repository.Account
 {
-    public class ProfileRepository : IRoleStore<Domain.Account.Role>
+        public class RoleRepository : IRoleStore<Role>
     {
         private bool disposedValue;
+
         private RedeSocialContext Context { get; set; }
 
-        public ProfileRepository(RedeSocialContext redeSocialContext)
+        public RoleRepository(RedeSocialContext redeSocialContext)
         {
             this.Context = redeSocialContext;
         }
 
-       public async Task<IdentityResult> CreateAsync(Role role, CancellationToken cancellationToken)
+        public async Task<IdentityResult> CreateAsync(Role role, CancellationToken cancellationToken)
         {
             this.Context.Profiles.Add(role);
             await this.Context.SaveChangesAsync();

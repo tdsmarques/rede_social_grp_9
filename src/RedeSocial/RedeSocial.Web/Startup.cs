@@ -34,7 +34,7 @@ namespace RedeSocial.Web
         {
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IUserStore<Account>, AccountRepository>();
-            services.AddTransient<IRoleStore<Role>, ProfileRepository>();
+            services.AddTransient<IRoleStore<Role>, RoleRepository>();
             services.AddTransient<IAccountIdentityManager, AccountIdentityManager>();
             services.AddTransient<IAccountService, AccountService>();
 

@@ -4,16 +4,14 @@ using RedeSocial.Domain.Account;
 
 namespace RedeSocial.Repository.Mapping
 {
-    public class ProfileMap : IEntityTypeConfiguration<Role>
+    public class RoleMap : IEntityTypeConfiguration<Role>
     {
         public void Configure(EntityTypeBuilder<Role> builder)
         {
-            builder.ToTable("Profile");
+            builder.ToTable("Role");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
-
-            builder.HasMany(x => x.Accounts).WithOne(); 
         }
     }
 }
