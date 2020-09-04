@@ -4,9 +4,9 @@ using RedeSocial.Domain.Account;
 
 namespace RedeSocial.Repository.Mapping
 {
-    public class ProfileMap : IEntityTypeConfiguration<Profile>
+    public class ProfileMap : IEntityTypeConfiguration<Role>
     {
-        public void Configure(EntityTypeBuilder<Profile> builder)
+        public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("Profile");
             builder.HasKey(x => x.Id);

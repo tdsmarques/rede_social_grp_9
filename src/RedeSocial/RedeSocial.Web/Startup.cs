@@ -34,7 +34,7 @@ namespace RedeSocial.Web
         {
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IUserStore<Account>, AccountRepository>();
-            services.AddTransient<IRoleStore<Profile>, ProfileRepository>();
+            services.AddTransient<IRoleStore<Role>, ProfileRepository>();
             services.AddTransient<IAccountIdentityManager, AccountIdentityManager>();
             services.AddTransient<IAccountService, AccountService>();
 
@@ -43,7 +43,7 @@ namespace RedeSocial.Web
                 options.UseSqlServer(Configuration.GetConnectionString("RedeSocialConnection"));
             });
             
-            services.AddIdentity<Account, Profile>()                
+            services.AddIdentity<Account, Role>()                
                 .AddDefaultTokenProviders();
 
             services.ConfigureApplicationCookie(options =>

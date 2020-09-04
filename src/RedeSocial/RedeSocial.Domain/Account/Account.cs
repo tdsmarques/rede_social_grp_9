@@ -10,7 +10,7 @@ namespace RedeSocial.Domain.Account
         public DateTime Birthday { get; set; }
         public String Email { get; set; }
         public String Password { get; set; }
-        public Profile Profile { get; set; }
-
+        public Role Role { get; set; }
+        public string UserName { get; set; }
     }
 }

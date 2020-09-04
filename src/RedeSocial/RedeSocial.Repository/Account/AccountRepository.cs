@@ -90,14 +90,14 @@ namespace RedeSocial.Repository.Account
         public Task<Domain.Account.Account> GetAccountByEmailPassword(string email, string password)
         {
             return Task.FromResult(this.Context.Accounts
-                                               .Include(x => x.Profile)
+                                               .Include(x => x.Role)
                                                .FirstOrDefault(x => x.Email == email && x.Password == password));
         }
 
         public Task<Domain.Account.Account> GetAccountByUserNamePassword(string userName, string password)
         {
             return Task.FromResult(this.Context.Accounts
-                                               .Include(x => x.Profile)
+                                               .Include(x => x.Role)
                                                .FirstOrDefault(x => x.Name == userName && x.Password == password));
         }
 
