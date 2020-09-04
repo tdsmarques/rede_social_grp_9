@@ -1,7 +1,10 @@
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+
 namespace RedeSocial.Services.Account
 {
-    public class IAccountIdentityManager
+    public interface IAccountIdentityManager
     {
-
+        Task<SignInResult> Login(string userName, string password);
     }
 }

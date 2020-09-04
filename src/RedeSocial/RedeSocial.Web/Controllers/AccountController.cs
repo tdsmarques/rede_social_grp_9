@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RedeSocial.Services.Account;
+using RedeSocial.Web.ViewModel.Account;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,9 +21,41 @@ namespace RedeSocial.Web.Controllers
             this.AccountIdentityManager = accountIdentityManager;
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl = "")
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            
+            try
+            {
+                var result = await this.AccountIdentityManager.Login(model.UserName, model.Password);
+
+                if (!result.Succeeded)
+                {
+                    ModelState.AddModelError(string.Empty, "Login ou senha inválidos");
+                    return View(model);
+                }
+
+                if (!String.IsNullOrWhiteSpace(returnUrl))
+                    return Redirect(returnUrl);
+
+                return Redirect("/");
+            }
+            catch
+            {
+                ModelState.AddModelError(string.Empty, "Ocorreu um erro, por favor tente mais tarde.");
+                return View(model);
+            }
+            
+        }
+
+
+
+
     }
 }
