@@ -1,5 +1,7 @@
 @{
     ViewData["Title"] = "Login Page";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+
 }
 
 @model RedeSocial.Web.ViewModel.Account.LoginViewModel
@@ -9,14 +11,24 @@
 </div>
 
 <div asp-validation-summary="All" class="text-danger"></div>
-<form asp-action="Login" asp-controller="Account" method="post" asp-route-returnurl="@ViewBag.ReturnUrl" >
-    <div class="form-group">
-        <label asp-for="UserName" >UserName</label>
-        <input type="text" asp-for="UserName" class="form-control" placeholder="UserName">
-    </div>
-    <div class="form-group">
-        <label asp-for="Password" >Password</label>
-        <input type="password" asp-for="Password" class="form-control" placeholder="Senha">
-    </div>
-    <button type="submit" class="btn btn-primary">Entrar</button>
-</form>
+<div class="row mt-5">
+    <form id="form-signin" asp-action="Login" asp-controller="Account" method="post" asp-route-returnurl="@ViewBag.ReturnUrl">
+        <img class="ml-2" src="~/img/logo_m.jpg">
+        <label for="UserName" class="sr-only">UserName</label>
+        <input type="text" id="UserName" class="form-control" placeholder="UserName" required autofocus>
+
+        <label for="Password" class="sr-only">Password</label>
+        <input type="password" id="Password" class="form-control" placeholder="Password" required>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <div class="mt-3 mb-3">
+            <a href="" class="text-center">Esqueceu a senha?</a>
+        </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Criar Nova conta</button>
+    </form>
+</div>
