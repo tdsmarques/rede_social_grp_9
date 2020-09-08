@@ -30,7 +30,6 @@ namespace RedeSocial.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
         {
-            
             try
             {
                 var result = await this.AccountIdentityManager.Login(model.UserName, model.Password);
@@ -53,9 +52,25 @@ namespace RedeSocial.Web.Controllers
             }
             
         }
-
-
-
-
+        
+        public IActionResult Create()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> Create(AccountViewModel model, string returnUrl)
+        {
+            try
+            {
+                return Redirect("/Account/Login");
+            }
+            catch
+            {
+                ModelState.AddModelError(string.Empty, "Ocorreu um erro, por favor tente mais tarde.");
+                return View(model);
+            }
+            
+        }
     }
 }

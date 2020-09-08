@@ -12,5 +12,15 @@ namespace RedeSocial.Domain.Account
         public String Password { get; set; }
         public Role Role { get; set; }
         public string UserName { get; set; }
+
+        public Account(string name, DateTime birthday, string email, string password, Role role, string userName)
+        {
+            Name = name;
+            Birthday = birthday;
+            Email = email;
+            Password = password;
+            Role = role;
+            UserName = userName;
+        }
     }
 }

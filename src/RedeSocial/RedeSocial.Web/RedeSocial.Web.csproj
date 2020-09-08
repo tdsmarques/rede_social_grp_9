@@ -21,5 +21,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Remove="Views\Shared\_LoginPartial.cshtml" />
+    <Content Remove="Views\Home\Create.cshtml" />
   </ItemGroup>
 </Project>
