@@ -10,7 +10,7 @@ using RedeSocial.Web.Models;
 
 namespace RedeSocial.Web.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

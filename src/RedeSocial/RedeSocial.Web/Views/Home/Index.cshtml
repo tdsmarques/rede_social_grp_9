@@ -2,7 +2,251 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <a href="profile.html">
+                    <img src="img/bruno.jpg" class="photoPerfil img-thumbnail" alt="">
+                </a>
+                <div class="h5">Bruno</div>
+                <div class="h7 text-muted">Fullname : Bruno Feijó Rocha</div>
+                <div class="h7">
+                    Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
+                    etc.
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="h6 text-muted">Followers</div>
+                    <div class="h5">5.2342</div>
+                </li>
+                <li class="list-group-item">
+                    <div class="h6 text-muted">Following</div>
+                    <div class="h5">6758</div>
+                </li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6 gedf-main">
+
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
+                            Make
+                            a publication
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images" aria-selected="false" href="#images">Images</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                        <div class="form-group">
+                            <label class="sr-only" for="message">post</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="What are you thinking?"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Upload image</label>
+                            </div>
+                        </div>
+                        <div class="py-4"></div>
+                    </div>
+                </div>
+                <div class="btn-toolbar justify-content-between">
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">share</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Post /////-->
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="ml-2">
+                            <div class="h5 m-0">Bruno</div>
+                            <div class="text-muted h7"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <img class="photoPost" src="https://picsum.photos/200/200" alt="">
+                </div>
+                <a class="card-link mt-1" href="#">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet</h5>
+                </a>
+
+                <p class="card-text ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
+                    sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            </div>
+        </div>
+        <!-- Post /////-->
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="ml-2">
+                            <div class="h5 m-0">Bruno</div>
+                            <div class="text-muted h7"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <img class="photoPost" src="https://picsum.photos/200/200" alt="">
+                </div>
+                <a class="card-link mt-1" href="#">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet</h5>
+                </a>
+
+                <p class="card-text ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
+                    sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            </div>
+        </div>
+        <!-- Post /////-->
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="ml-2">
+                            <div class="h5 m-0">Bruno</div>
+                            <div class="text-muted h7"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <img class="photoPost" src="https://picsum.photos/200/200" alt="">
+                </div>
+                <a class="card-link mt-1" href="#">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet</h5>
+                </a>
+
+                <p class="card-text ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
+                    sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            </div>
+        </div>
+        <!-- Post /////-->
+    </div>
+    <div class="col-md-3">
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="ml-2">
+                            <div class="h6 m-0">My Friends        
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <ul class="friends">
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                    <li><a href="profile.html" class="thumbnail"><img src="img/user.png" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary ">View all Friends</button>
+            </div>
+        </div>
+
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="ml-2">
+                            <div class="h6 m-0">Solicitações de amizade</div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-2">
+                        <img class="rounded-circle" width="45" src="./img/mariana.jpg" alt="">
+                    </div>
+                    <div class="ml-2">
+                        <div class="h5 m-0">Mariana Frisoni</div>
+                        <div class="h7 text-muted">1 Amigo em comum</div>
+                    </div>
+                </div>
+                <div class="btn-toolbar justify-content-between mt-4">
+                  
+                        <button type="submit" class="btn btn-primary ml-1">Confirmar</button>
+                        <button type="submit" class="btn btn-secondary mr-3">Excluir</button>
+                    </div>
+                
+            </div>
+        </div>
+
+    </div>
+
 </div>
+
+
+
+
