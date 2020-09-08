@@ -22,4 +22,8 @@
     </Content>
     <Content Remove="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\logo.svg" />
+  </ItemGroup>
 </Project>
