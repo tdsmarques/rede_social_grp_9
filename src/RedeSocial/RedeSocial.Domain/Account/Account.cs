@@ -13,6 +13,10 @@ namespace RedeSocial.Domain.Account
         public Role Role { get; set; }
         public string UserName { get; set; }
 
+        public Account()
+        {
+        }
+
         public Account(string name, DateTime birthday, string email, string password, Role role, string userName)
         {
             Name = name;
