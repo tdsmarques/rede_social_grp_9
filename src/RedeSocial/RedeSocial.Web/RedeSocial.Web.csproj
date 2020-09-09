@@ -21,9 +21,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Remove="Views\Shared\_LoginPartial.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\img\logo.svg" />
+    <Content Remove="Views\Home\Create.cshtml" />
   </ItemGroup>
 </Project>

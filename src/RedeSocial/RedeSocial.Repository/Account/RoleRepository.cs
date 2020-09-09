@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RedeSocial.Domain.Account;
+using RedeSocial.Domain.Account.Repository;
 using RedeSocial.Repository.Context;
 
 
 namespace RedeSocial.Repository.Account
 {
-        public class RoleRepository : IRoleStore<Role>
+        public class RoleRepository : IRoleStore<Role>, IRoleRepository
     {
         private bool disposedValue;
 
@@ -22,16 +24,17 @@ namespace RedeSocial.Repository.Account
             this.Context = redeSocialContext;
         }
 
+        #region Tasks
         public async Task<IdentityResult> CreateAsync(Role role, CancellationToken cancellationToken)
         {
-            this.Context.Profiles.Add(role);
+            this.Context.Roles.Add(role);
             await this.Context.SaveChangesAsync();
             return IdentityResult.Success;
         }
 
         public async Task<IdentityResult> DeleteAsync(Role role, CancellationToken cancellationToken)
         {
-            this.Context.Profiles.Remove(role);
+            this.Context.Roles.Remove(role);
             await this.Context.SaveChangesAsync();
             return IdentityResult.Success;
 
@@ -39,12 +42,12 @@ namespace RedeSocial.Repository.Account
 
         public async Task<Role> FindByIdAsync(string roleId, CancellationToken cancellationToken)
         {
-            return await this.Context.Profiles.FirstOrDefaultAsync(x => x.Id == new Guid(roleId));
+            return await this.Context.Roles.FirstOrDefaultAsync(x => x.Id == new Guid(roleId));
         }
 
         public async Task<Role> FindByNameAsync(string normalizedRoleName, CancellationToken cancellationToken)
         {
-            return await this.Context.Profiles.FirstOrDefaultAsync(x => x.Name == normalizedRoleName);
+            return await this.Context.Roles.FirstOrDefaultAsync(x => x.Name == normalizedRoleName);
         }
 
         public Task<string> GetNormalizedRoleNameAsync(Role role, CancellationToken cancellationToken)
@@ -76,12 +79,12 @@ namespace RedeSocial.Repository.Account
 
         public async Task<IdentityResult> UpdateAsync(Role role, CancellationToken cancellationToken)
         {
-            var roleToUpdate = await this.Context.Profiles.AsNoTracking().FirstOrDefaultAsync(x => x.Id == role.Id);
+            var roleToUpdate = await this.Context.Roles.AsNoTracking().FirstOrDefaultAsync(x => x.Id == role.Id);
 
             roleToUpdate = role;
             this.Context.Entry(roleToUpdate).State = EntityState.Modified;
 
-            this.Context.Profiles.Add(roleToUpdate);
+            this.Context.Roles.Add(roleToUpdate);
             await this.Context.SaveChangesAsync();
 
             return IdentityResult.Success;
@@ -116,6 +119,18 @@ namespace RedeSocial.Repository.Account
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+        }
+        
+        #endregion
+
+        public Role GetRoleById(Guid id)
+        {
+            return this.Context.Roles.FirstOrDefault(x => x.Id == id);
+        }
+
+        public Role GetRolebyName(string name)
+        {
+            return this.Context.Roles.FirstOrDefault(x => x.Name == name);
         }
     }
 }

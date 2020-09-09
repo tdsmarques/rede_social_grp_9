@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Criar Conta";
+}
+
+@model RedeSocial.Web.ViewModel.Account.AccountViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Criar Conta Usuário</h1>
+</div>
+<div class="col-5">
+	<form asp-action="Create" asp-controller="Account" method="post">            
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Nome</label>
+            <input asp-for="Name" type="text" class="form-control" />
+    		<span asp-validation-for="Name"> </span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Birthday" class="control-label">Data de Nascimento</label>
+            <input asp-for="Birthday" type="date" class="form-control" />
+    		<span asp-validation-for="Birthday"> </span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input asp-for="Email" type="email" class="form-control" />
+    		<span asp-validation-for="Email"> </span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label">Usuário</label>
+            <input asp-for="UserName" type="text" class="form-control" />
+    		<span asp-validation-for="UserName"> </span>
+        </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Senha</label>
+                <input asp-for="Password"  type="password" class="form-control" />
+    			<span asp-validation-for="Password"> </span>
+            </div>
+    
+        <div class="form-group">
+            <input type="submit" value="Criar Conta" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
