@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RedeSocial.Domain.Account;
 using RedeSocial.Domain.Account.Repository;
 using RedeSocial.Repository.Context;
 
@@ -133,6 +134,15 @@ namespace RedeSocial.Repository.Account
             GC.SuppressFinalize(this);
         }
         #endregion
+        
+        public Role GetRolebyName(string name)
+        {
+            return this.Context.Roles.FirstOrDefault(x => x.Name == name);
+        }
 
+        public void CreateAccount(Domain.Account.Account account)
+        {
+            CreateAsync(account, CancellationToken.None);
+        }
     }
 }

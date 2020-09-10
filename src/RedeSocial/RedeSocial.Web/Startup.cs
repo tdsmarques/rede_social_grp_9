@@ -33,6 +33,7 @@ namespace RedeSocial.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IUserStore<Account>, AccountRepository>();
             services.AddTransient<IRoleStore<Role>, RoleRepository>();
             services.AddTransient<IAccountIdentityManager, AccountIdentityManager>();

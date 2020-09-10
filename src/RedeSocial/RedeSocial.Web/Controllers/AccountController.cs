@@ -58,11 +58,18 @@ namespace RedeSocial.Web.Controllers
             return View();
         }
         
+        [HttpGet]
+        public async Task<IActionResult> CreateAccount()
+        {
+            return Redirect("/Account/Create");
+        }
+        
         [HttpPost]
-        public async Task<IActionResult> Create(AccountViewModel model, string returnUrl)
+        public async Task<IActionResult> Create(AccountViewModel model)
         {
             try
             {
+                AccountService.Create(model.Name, model.Birthday, model.Email, model.Password, model.UserName);
                 return Redirect("/Account/Login");
             }
             catch

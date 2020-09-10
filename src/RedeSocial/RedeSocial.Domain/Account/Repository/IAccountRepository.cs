@@ -7,5 +7,7 @@ namespace RedeSocial.Domain.Account.Repository
     {
         Task<Account> GetAccountByEmailPassword(string email, string password);
         Task<Domain.Account.Account> GetAccountByUserNamePassword(string userName, string password);
+        Role GetRolebyName(String name);
+        void CreateAccount(Account account);
     }
 }
