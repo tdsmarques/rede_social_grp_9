@@ -1,14 +1,16 @@
 @{
     ViewData["Title"] = "Criar Conta";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
 @model RedeSocial.Web.ViewModel.Account.AccountViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Criar Conta Usuário</h1>
-</div>
-<div class="col-5">
-    <form asp-action="Create" asp-controller="Account" method="post">            
+<div class="row">
+    <form asp-action="Create" class="form-login" asp-controller="Account" method="post">
+        <div class="text-center">
+            <img src="~/img/logoLogin.png" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
         <div class="form-group">
             <label asp-for="Name" class="control-label">Nome</label>
             <input asp-for="Name" type="text" class="form-control" />
@@ -31,17 +33,19 @@
         </div>
         <div class="form-group">
             <label asp-for="Password" class="control-label">Senha</label>
-            <input asp-for="Password"  type="password" class="form-control" />
+            <input asp-for="Password" type="password" class="form-control" />
             <span class="alert-danger" asp-validation-for="Password"> </span>
         </div>
-    
+
         <div class="form-group">
-            <input type="submit" value="Criar Conta" class="btn btn-primary" />
+            <button type="submit" class="btn btn-lg btn-primary btn-block">
+                Criar Conta
+            </button>
         </div>
     </form>
-</div>
+    </div>
 
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
