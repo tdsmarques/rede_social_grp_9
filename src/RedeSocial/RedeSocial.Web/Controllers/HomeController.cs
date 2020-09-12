@@ -24,8 +24,18 @@ namespace RedeSocial.Web.Controllers
         {
             return View();
         }
+        //Somente para testes 
+        public IActionResult Comment()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult About()
         {
             return View();
         }

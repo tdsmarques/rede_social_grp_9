@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@model RedeSocial.Web.ViewModel.Account.LoginViewModel
+
+<div class="row h-100">
+    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+        <div class="d-table-cell align-middle">
+
+            <div class="text-center mt-4">
+                <img src="~/img/logoLogin.png" />
+                <div asp-validation-summary="All" class="text-danger"></div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="m-sm-4">
+                        <form>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email">
+                            </div>
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-lg btn-primary">Reset password</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

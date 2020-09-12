@@ -27,6 +27,11 @@ namespace RedeSocial.Web.Controllers
             return View();
         }
 
+        public IActionResult Reset()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
         {
