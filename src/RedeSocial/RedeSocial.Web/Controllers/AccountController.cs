@@ -74,7 +74,7 @@ namespace RedeSocial.Web.Controllers
         {
             try
             {
-                AccountService.Create(model.Name, model.Birthday, model.Email, model.Password, model.UserName);
+                AccountService.Create(model.Name, model.Birthday, model.Email, model.Password, model.UserName, model.UrlImage);
                 return Redirect("/Account/Login");
             }
             catch

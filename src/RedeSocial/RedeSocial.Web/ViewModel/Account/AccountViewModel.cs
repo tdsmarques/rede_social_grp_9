@@ -18,5 +18,7 @@ namespace RedeSocial.Web.ViewModel.Account
         public RoleViewModel Role { get; set; }
         [Required(ErrorMessage = "Campo Usuário é obrigatório")]
         public String UserName { get; set; }
+        [Required(ErrorMessage = "Campo Imagem Perfil é obrigatório")]
+        public String UrlImage { get; set; }
     }
 }
