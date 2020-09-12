@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RedeSocial.Domain.Account;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using RedeSocial.CrossCuting.Storage;
 using RedeSocial.Domain.Account.Repository;
 using RedeSocial.Repository.Account;
 using RedeSocial.Repository.Context;
@@ -38,11 +39,14 @@ namespace RedeSocial.Web
             services.AddTransient<IRoleStore<Role>, RoleRepository>();
             services.AddTransient<IAccountIdentityManager, AccountIdentityManager>();
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<AzureStorage>();
 
             services.AddDbContext<RedeSocialContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("RedeSocialConnection"));
             });
+
+            services.Configure<AzureStorageOptions>(Configuration.GetSection("Microsoft.Storage"));
             
             services.AddIdentity<Account, Role>()                
                 .AddDefaultTokenProviders();

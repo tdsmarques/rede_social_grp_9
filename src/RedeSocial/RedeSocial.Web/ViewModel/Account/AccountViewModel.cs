@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace RedeSocial.Web.ViewModel.Account
 {
@@ -18,7 +19,5 @@ namespace RedeSocial.Web.ViewModel.Account
         public RoleViewModel Role { get; set; }
         [Required(ErrorMessage = "Campo Usuário é obrigatório")]
         public String UserName { get; set; }
-        [Required(ErrorMessage = "Campo Imagem Perfil é obrigatório")]
-        public String UrlImage { get; set; }
     }
 }
