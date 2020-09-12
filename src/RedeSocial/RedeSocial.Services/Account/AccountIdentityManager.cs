@@ -26,14 +26,8 @@ namespace RedeSocial.Services.Account
             }
 
             await SignInManager.SignInAsync(account, false);
-            
             return SignInResult.Success;
             
-        }
-
-        public async Task Logout()
-        {
-            await this.SignInManager.SignOutAsync();
         }
     }
 }

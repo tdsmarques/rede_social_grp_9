@@ -14,10 +14,10 @@ namespace RedeSocial.Services.Account
             this.accountRepository = accountRepository;
         }
 
-        public void Create(string name, DateTime birthday, string email, string password, string username)
+        public void Create(string name, DateTime birthday, string email, string password, string username, string urlImage)
         {
             var userRole = accountRepository.GetRolebyName("USUARIO");
-            var newAccount = new Domain.Account.Account(name, birthday, email, password, userRole, username);
+            var newAccount = new Domain.Account.Account(name, birthday, email, password, userRole, username, urlImage);
             
             accountRepository.CreateAccount(newAccount);
         }

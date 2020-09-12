@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RedeSocial.CrossCuting.Storage;
 using RedeSocial.Services.Account;
 using RedeSocial.Web.ViewModel.Account;
 
@@ -14,11 +17,13 @@ namespace RedeSocial.Web.Controllers
     {
         private IAccountService AccountService { get; set; }
         private IAccountIdentityManager AccountIdentityManager { get; set; }
+        private AzureStorage AzureStorage { get; set; }
 
-        public AccountController(IAccountService accountService, IAccountIdentityManager accountIdentityManager)
+        public AccountController(IAccountService accountService, IAccountIdentityManager accountIdentityManager, AzureStorage azureStorage)
         {
-            this.AccountService = accountService;
-            this.AccountIdentityManager = accountIdentityManager;
+            AccountService = accountService;
+            AccountIdentityManager = accountIdentityManager;
+            AzureStorage = azureStorage;
         }
 
         public IActionResult Login(string returnUrl = "")
@@ -70,11 +75,21 @@ namespace RedeSocial.Web.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> Create(AccountViewModel model)
+        public async Task<IActionResult> Create(AccountViewModel model, [FromForm] IFormFile file)
         {
+            var ms = new MemoryStream();
             try
             {
-                AccountService.Create(model.Name, model.Birthday, model.Email, model.Password, model.UserName);
+                using (var fileUpload = file.OpenReadStream())
+                {
+                    await fileUpload.CopyToAsync(ms);
+                    fileUpload.Close();
+                }
+
+                var urlAzure = await this.AzureStorage.SaveToStorage(ms.ToArray(), $"{Guid.NewGuid().ToString().Replace("-", "")}.jpg");
+                AccountService.Create(model.Name, model.Birthday, model.Email, model.Password, model.UserName, urlAzure);
+                
+                
                 return Redirect("/Account/Login");
             }
             catch

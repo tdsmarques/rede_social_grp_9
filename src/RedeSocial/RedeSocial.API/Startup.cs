@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RedeSocial.CrossCuting.Storage;
 
 namespace RedeSocial.API
 {
@@ -26,6 +27,8 @@ namespace RedeSocial.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Configure<AzureStorageOptions>(Configuration.GetSection("Microsoft.Storage"));
+            services.AddTransient<AzureStorage>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
