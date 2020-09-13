@@ -8,7 +8,7 @@ namespace RedeSocial.Domain.Post.Repository
     public interface ICommentRepository
     {
         Task<IdentityResult> CreateComment(Comment comment, CancellationToken cancellationToken);
-        Task<Account.Account> GetAccountByName(String name);
-        Task<Post> GetPostById(Guid id);
+        Account.Account GetAccountByName(String name);
+        Post GetPostById(Guid id);
     }
 }

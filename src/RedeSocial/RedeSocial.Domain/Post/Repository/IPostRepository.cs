@@ -8,6 +8,6 @@ namespace RedeSocial.Domain.Post.Repository
     public interface IPostRepository
     {
         Task<IdentityResult> CreatePost(Post post, CancellationToken cancellationToken);
-        Task<Account.Account> GetAccountByName(String name);
+        Account.Account GetAccountByName(String name);
     }
 }

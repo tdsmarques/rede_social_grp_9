@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -24,9 +25,9 @@ namespace RedeSocial.Repository.Post
             return IdentityResult.Success;
         }
 
-        public Task<Domain.Account.Account> GetAccountByName(string name)
+        public Domain.Account.Account GetAccountByName(string name)
         {
-            return this.Context.Accounts.FirstOrDefaultAsync(x => x.UserName == name);
+            return this.Context.Accounts.FirstOrDefault(x => x.UserName == name);
         }
     }
 }

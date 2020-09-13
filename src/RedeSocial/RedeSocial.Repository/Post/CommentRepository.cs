@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -11,7 +12,6 @@ namespace RedeSocial.Repository.Post
 {
     public class CommentRepository : ICommentRepository
     {
-        private bool disposedValue;
         private RedeSocialContext Context { get; set; }
 
         public CommentRepository(RedeSocialContext context)
@@ -26,14 +26,14 @@ namespace RedeSocial.Repository.Post
             return IdentityResult.Success;
         }
 
-        public Task<Domain.Account.Account> GetAccountByName(string name)
+        public Domain.Account.Account GetAccountByName(string name)
         {
-            return this.Context.Accounts.FirstOrDefaultAsync(x => x.UserName == name);
+            return this.Context.Accounts.FirstOrDefault(x => x.UserName == name);
         }
 
-        public Task<Domain.Post.Post> GetPostById(Guid id)
+        public Domain.Post.Post GetPostById(Guid id)
         {
-            return this.Context.Posts.FirstOrDefaultAsync(x => x.Id == id);
+            return this.Context.Posts.FirstOrDefault(x => x.Id == id);
         }
     }
 }
