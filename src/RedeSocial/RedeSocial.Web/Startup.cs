@@ -15,8 +15,11 @@ using RedeSocial.Domain.Account;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using RedeSocial.CrossCuting.Storage;
 using RedeSocial.Domain.Account.Repository;
+using RedeSocial.Domain.Post;
+using RedeSocial.Domain.Post.Repository;
 using RedeSocial.Repository.Account;
 using RedeSocial.Repository.Context;
+using RedeSocial.Repository.Post;
 using RedeSocial.Services.Account;
 
 namespace RedeSocial.Web
@@ -35,6 +38,8 @@ namespace RedeSocial.Web
         {
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IRoleRepository, RoleRepository>();
+            services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<ICommentRepository, CommentRepository>();
             services.AddTransient<IUserStore<Account>, AccountRepository>();
             services.AddTransient<IRoleStore<Role>, RoleRepository>();
             services.AddTransient<IAccountIdentityManager, AccountIdentityManager>();
