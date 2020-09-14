@@ -20,19 +20,20 @@
                         </div>
                         <div class="header-links">
                             <ul class="links d-flex align-items-center mt-3 mt-md-0">
-                                <li class="header-link-item d-flex active mr-5 pr-5">
+                                <li class="header-link-item d-flex mr-5 pr-5">
                                     <img class="img ml-0" src="~/img/logoTimeline.png" alt="">
                                 </li>
-                                <li class="header-link-item d-flex align-items-center active">
-                                    <span class="fa fa-home text-primary mr-1"></span>
+                                <li class="header-link-item d-flex align-items-center">
+                                    <span class="fa fa-home mr-1"></span>
                                     @(Html.ActionLink("Timeline", "Index"))
                                 </li>
-                                <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
+                                <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center active">
                                     <span class="fa fa-user mr-1"></span>
                                     @(Html.ActionLink("About", "About"))
                                 </li>
                                 <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-                                    <span class="fa fa-users mr-2"></span><a class="pt-1px d-none d-md-block" href="">Friends</a>
+                                    <span class="fa fa-pencil-square-o mr-1"></span>
+                                    @(Html.ActionLink("Post", "Post"))
                                 </li>
                             </ul>
                         </div>

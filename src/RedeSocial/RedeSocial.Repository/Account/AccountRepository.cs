@@ -27,8 +27,8 @@ namespace RedeSocial.Repository.Account
         #region Tasks
         public async Task<IdentityResult> CreateAsync(Domain.Account.Account user, CancellationToken cancellationToken)
         {
-            this.Context.Accounts.Add(user);
-            this.Context.SaveChangesAsync();
+            Context.Accounts.Add(user);
+            await Context.SaveChangesAsync();
             return IdentityResult.Success;
         }
 
@@ -140,9 +140,14 @@ namespace RedeSocial.Repository.Account
             return this.Context.Roles.FirstOrDefault(x => x.Name == name);
         }
 
-        public void CreateAccount(Domain.Account.Account account)
+        public async void CreateAccount(Domain.Account.Account account)
         {
-            CreateAsync(account, CancellationToken.None);
+            await CreateAsync(account, CancellationToken.None);
+        }
+        
+        public Domain.Account.Account GetAccountbyName(string name)
+        {
+            return this.Context.Accounts.FirstOrDefault(x => x.UserName == name);
         }
     }
 }

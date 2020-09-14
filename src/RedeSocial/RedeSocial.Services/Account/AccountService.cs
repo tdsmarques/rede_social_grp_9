@@ -21,5 +21,10 @@ namespace RedeSocial.Services.Account
             
             accountRepository.CreateAccount(newAccount);
         }
+
+        public Domain.Account.Account GetAccountByUsername(string username)
+        {
+            return accountRepository.GetAccountbyName(username);
+        }
     }
 }

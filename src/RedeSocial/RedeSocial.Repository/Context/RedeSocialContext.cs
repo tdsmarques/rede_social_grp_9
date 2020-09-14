@@ -8,6 +8,8 @@ namespace RedeSocial.Repository.Context
     {
         public DbSet<Domain.Account.Account> Accounts { get; set; }
         public DbSet<Domain.Account.Role> Roles { get; set; }
+        public DbSet<Domain.Post.Post> Posts { get; set; }
+        public DbSet<Domain.Post.Comment> Comments { get; set; }
         
         public static readonly ILoggerFactory LoggerFactory =
             Microsoft.Extensions.Logging.LoggerFactory.Create(builder => { builder.AddConsole(); });
@@ -27,6 +29,8 @@ namespace RedeSocial.Repository.Context
         {
             modelBuilder.ApplyConfiguration(new AccountMap());
             modelBuilder.ApplyConfiguration(new RoleMap());
+            modelBuilder.ApplyConfiguration(new PostMap());
+            modelBuilder.ApplyConfiguration(new CommentMap());
             base.OnModelCreating(modelBuilder);
         }
     }

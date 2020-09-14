@@ -12,6 +12,7 @@ namespace RedeSocial.Repository.Mapping
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
+            builder.HasMany(x => x.Accounts).WithOne(x => x.Role);
         }
     }
 }
