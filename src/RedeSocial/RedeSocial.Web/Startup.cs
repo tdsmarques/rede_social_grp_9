@@ -21,6 +21,7 @@ using RedeSocial.Repository.Account;
 using RedeSocial.Repository.Context;
 using RedeSocial.Repository.Post;
 using RedeSocial.Services.Account;
+using RedeSocial.Services.Post;
 
 namespace RedeSocial.Web
 {
@@ -44,6 +45,8 @@ namespace RedeSocial.Web
             services.AddTransient<IRoleStore<Role>, RoleRepository>();
             services.AddTransient<IAccountIdentityManager, AccountIdentityManager>();
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IPostService, PostService>();
+            services.AddTransient<ICommentService, CommentService>();
             services.AddTransient<AzureStorage>();
 
             services.AddDbContext<RedeSocialContext>(options =>

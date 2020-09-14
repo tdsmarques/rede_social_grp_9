@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,6 +29,11 @@ namespace RedeSocial.Repository.Post
         public Domain.Account.Account GetAccountByName(string name)
         {
             return this.Context.Accounts.FirstOrDefault(x => x.UserName == name);
+        }
+
+        public List<Domain.Post.Post> GetAllPosts()
+        {
+            return Context.Posts.ToList();
         }
     }
 }

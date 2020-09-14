@@ -9,5 +9,6 @@ namespace RedeSocial.Domain.Account.Repository
         Task<Domain.Account.Account> GetAccountByUserNamePassword(string userName, string password);
         Role GetRolebyName(String name);
         void CreateAccount(Account account);
+        Account GetAccountbyName(String name);
     }
 }

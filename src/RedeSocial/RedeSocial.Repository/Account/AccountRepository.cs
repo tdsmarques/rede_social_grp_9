@@ -144,5 +144,10 @@ namespace RedeSocial.Repository.Account
         {
             await CreateAsync(account, CancellationToken.None);
         }
+        
+        public Domain.Account.Account GetAccountbyName(string name)
+        {
+            return this.Context.Accounts.FirstOrDefault(x => x.UserName == name);
+        }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using RedeSocial.Domain.Post;
 using RedeSocial.Domain.Post.Repository;
@@ -21,13 +22,18 @@ namespace RedeSocial.Services.Post
 
             var comment = new Domain.Post.Comment();
 
-            comment.Post = post;
-            comment.User = user;
+            comment.PostId = post.Id;
+            comment.UserId = user.Id;
             comment.Message = message;
             comment.PublishDateTime = publishDateTime;
 
             CommentRepository.CreateComment(comment, CancellationToken.None);
 
+        }
+
+        public List<Comment> GetAllPostComments(Guid guid)
+        {
+            return CommentRepository.GetAllPostComments(guid);
         }
     }
 }

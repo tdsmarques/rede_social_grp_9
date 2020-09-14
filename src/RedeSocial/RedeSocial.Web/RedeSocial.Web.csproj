@@ -22,6 +22,7 @@
     </Content>
     <Content Remove="Views\Shared\_LoginPartial.cshtml" />
     <Content Remove="Views\Home\Create.cshtml" />
+    <Content Remove="Views\Home\Privacy.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

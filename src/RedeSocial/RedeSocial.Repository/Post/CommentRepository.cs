@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,6 +25,12 @@ namespace RedeSocial.Repository.Post
             this.Context.Comments.Add(comment);
             await this.Context.SaveChangesAsync();
             return IdentityResult.Success;
+        }
+
+        public List<Comment> GetAllPostComments(Guid guid)
+        {
+            var post = GetPostById(guid);
+            return post.Comments;
         }
 
         public Domain.Account.Account GetAccountByName(string name)

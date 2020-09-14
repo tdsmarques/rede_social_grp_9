@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using RedeSocial.Domain.Post.Repository;
 using RedeSocial.Repository.Post;
@@ -19,7 +20,7 @@ namespace RedeSocial.Services.Post
             var user = PostRepository.GetAccountByName(userName);
             var post = new Domain.Post.Post();
 
-            post.User = user;
+            post.AccountId = user.Id;
             post.Message = message;
             if (string.IsNullOrEmpty(imageUrl))
             {
@@ -33,6 +34,11 @@ namespace RedeSocial.Services.Post
 
             PostRepository.CreatePost(post, CancellationToken.None);
 
+        }
+
+        public List<Domain.Post.Post> GetAllPosts()
+        {
+            return PostRepository.GetAllPosts();
         }
     }
 }

@@ -10,11 +10,13 @@ namespace RedeSocial.Repository.Mapping
             builder.ToTable("Post");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.HasOne(x => x.User);
+            builder.Property(x => x.AccountId).IsRequired();
+            builder.Property(x => x.UserImageUrl).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.userName).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Message).IsRequired().HasMaxLength(100);
             builder.Property(x => x.ImageUrl).HasMaxLength(150);
             builder.Property(x => x.PublishDateTime).IsRequired();
-            builder.HasMany(x => x.Comments).WithOne(x => x.Post);
+            builder.HasMany(x => x.Comments);
         }
     }
 }

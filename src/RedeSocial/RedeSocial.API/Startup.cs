@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using RedeSocial.CrossCuting.Storage;
+using RedeSocial.Repository.Context;
+
 
 namespace RedeSocial.API
 {
@@ -29,6 +25,11 @@ namespace RedeSocial.API
             services.AddControllers();
             services.Configure<AzureStorageOptions>(Configuration.GetSection("Microsoft.Storage"));
             services.AddTransient<AzureStorage>();
+
+            services.AddDbContext<RedeSocialContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("RedeSocialConnection"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

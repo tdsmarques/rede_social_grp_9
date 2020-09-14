@@ -11,8 +11,8 @@ namespace RedeSocial.Repository.Mapping
             builder.ToTable("Comment");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.HasOne(x => x.Post);
-            builder.HasOne(x => x.User);
+            builder.Property(x => x.PostId).IsRequired();
+            builder.Property(x => x.UserId).IsRequired();
             builder.Property(x => x.Message).IsRequired().HasMaxLength(100);
             builder.Property(x => x.PublishDateTime).IsRequired();
         }
