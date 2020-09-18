@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using RedeSocial.API.Domain;
 using RedeSocial.API.Services;
@@ -17,20 +18,22 @@ namespace RedeSocial.API.Controllers
         {
             commentService = new CommentService(context);
         }
-        
-        
-        [HttpGet]
-        public ActionResult GetAllPostComment()
-        {
-            var comments = commentService.GetAllPostComment();
-            return Ok(comments);
-        }
 
         [HttpPost]
         public ActionResult CreatePost([FromBody] CommentRequest comment)
         {
             commentService.Create(comment);
             return Ok("Comentário criado com Sucesso");
+        }
+        
+        [Route("get")]
+        [HttpPost]
+        public ActionResult GetAllPostComments([FromBody] Guid idPost)
+        {
+            var comments = commentService.GetAllPostComment(idPost)
+                .OrderByDescending(x => x.PublishDateTime);
+            
+            return Ok(comments);
         }
     }
 }

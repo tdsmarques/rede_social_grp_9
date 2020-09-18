@@ -26,5 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Account\ApplicationDbContext.cs" />
+    <Compile Remove="Mapping\RelPostCommentMap.cs" />
   </ItemGroup>
 </Project>

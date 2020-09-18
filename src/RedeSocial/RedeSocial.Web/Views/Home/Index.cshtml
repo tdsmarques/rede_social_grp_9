@@ -29,12 +29,9 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex">
-                        <span class="primary">
-                            <span class="fa fa-thumbs-o-up text-primary mr-1"></span><a href="">Like</a>
-                        </span>
                         <span class="primary ml-3">
                             <span class="fa fa-comment text-primary mr-1"></span>
-                            @(Html.ActionLink("Comment", "Comment"))
+                            @(Html.ActionLink("Comment", "Comment", item))
                         </span>
                     </div>
                 </div>

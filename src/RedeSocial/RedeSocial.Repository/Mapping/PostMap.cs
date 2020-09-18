@@ -16,7 +16,6 @@ namespace RedeSocial.Repository.Mapping
             builder.Property(x => x.Message).IsRequired().HasMaxLength(100);
             builder.Property(x => x.ImageUrl).HasMaxLength(150);
             builder.Property(x => x.PublishDateTime).IsRequired();
-            builder.HasMany(x => x.Comments);
         }
     }
 }

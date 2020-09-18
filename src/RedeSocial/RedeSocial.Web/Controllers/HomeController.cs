@@ -15,6 +15,7 @@ using RedeSocial.CrossCuting.Storage;
 using RedeSocial.Domain.Post;
 using RedeSocial.Services.Account;
 using RedeSocial.Web.Models;
+using RedeSocial.Web.ViewModel.Account;
 using RedeSocial.Web.ViewModel.Post;
 
 namespace RedeSocial.Web.Controllers
@@ -54,15 +55,70 @@ namespace RedeSocial.Web.Controllers
             }
             return View(viewModel);
         }
-        //Somente para testes 
-        public IActionResult Comment()
+        
+        public async Task<IActionResult> Comment([FromRoute]Domain.Post.Post postModel)
         {
-            return View();
+            var viewModel = new CommentViewModel();
+            var user = AccountService.GetAccountByUsername(User.Identity.Name);
+            
+            var postRequest = JsonConvert.SerializeObject(postModel.Id);
+            var contentRequest = new StringContent(postRequest, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("api/post/get", contentRequest);
+            
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var post = JsonConvert.DeserializeObject<Post>(content);
+                viewModel.Post = post;
+            }
+            
+            var commentRequest = JsonConvert.SerializeObject(postModel.Id);
+            var contentCommentRequest = new StringContent(commentRequest, Encoding.UTF8, "application/json");
+            var responseComment = await httpClient.PostAsync("api/comment/get", contentCommentRequest);
+
+            if (responseComment.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var content = await responseComment.Content.ReadAsStringAsync();
+                var comments = JsonConvert.DeserializeObject<List<Comment>>(content);
+                viewModel.Comments = comments;
+            }
+
+
+
+
+            viewModel.UserLoggedIn = user;
+            return View(viewModel);
+        }
+
+        public async Task<IActionResult> CreateComment(CommentViewModel model)
+        {
+            var viewModel = new CommentRequestViewModel();
+
+            viewModel.userName = model.newComment.userName;
+            viewModel.Message = model.newComment.Message;
+            viewModel.PostId = model.newComment.PostId;
+            
+            
+            var commentRequest = JsonConvert.SerializeObject(viewModel);
+            var content = new StringContent(commentRequest, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("api/comment", content);
+                
+                
+            if (!response.IsSuccessStatusCode)
+            {
+                return Redirect("/Home/Index");
+            }
+            
+            
+            return Redirect("/");
         }
 
         public IActionResult About()
         {
-            return View();
+            var viewModel = new AboutViewModel();
+            var user = AccountService.GetAccountByUsername(User.Identity.Name);
+            viewModel.user = user;
+            return View(viewModel);
         }
         
         public IActionResult Post()

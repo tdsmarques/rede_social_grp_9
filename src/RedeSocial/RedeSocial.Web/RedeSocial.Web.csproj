@@ -28,4 +28,8 @@
   <ItemGroup>
     <None Include="wwwroot\img\logo.svg" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModel\Post\PostTimeLineViewModel.cs" />
+  </ItemGroup>
 </Project>

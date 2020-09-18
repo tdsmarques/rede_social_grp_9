@@ -13,6 +13,8 @@ namespace RedeSocial.Repository.Mapping
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(x => x.PostId).IsRequired();
             builder.Property(x => x.UserId).IsRequired();
+            builder.Property(x => x.UserImageUrl).IsRequired();
+            builder.Property(x => x.userName).IsRequired();
             builder.Property(x => x.Message).IsRequired().HasMaxLength(100);
             builder.Property(x => x.PublishDateTime).IsRequired();
         }

@@ -40,5 +40,10 @@ namespace RedeSocial.API.Services
         {
             return _redeSocialDb.Posts.ToList();
         }
+        
+        public Post GetPostById(Guid postId)
+        {
+            return _redeSocialDb.Posts.FirstOrDefault(x => x.Id == postId);
+        }
     }
 }

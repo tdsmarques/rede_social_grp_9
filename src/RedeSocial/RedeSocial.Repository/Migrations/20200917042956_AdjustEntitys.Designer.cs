@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RedeSocial.Repository.Context;
 
 namespace RedeSocial.Repository.Migrations
 {
     [DbContext(typeof(RedeSocialContext))]
-    partial class RedeSocialContextModelSnapshot : ModelSnapshot
+    [Migration("20200917042956_AdjustEntitys")]
+    partial class AdjustEntitys
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,6 +109,8 @@ namespace RedeSocial.Repository.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PostId");
+
                     b.ToTable("Comment");
                 });
 
@@ -151,6 +155,15 @@ namespace RedeSocial.Repository.Migrations
                     b.HasOne("RedeSocial.Domain.Account.Role", "Role")
                         .WithMany("Accounts")
                         .HasForeignKey("RoleId");
+                });
+
+            modelBuilder.Entity("RedeSocial.Domain.Post.Comment", b =>
+                {
+                    b.HasOne("RedeSocial.Domain.Post.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -1,8 +1,8 @@
 using System;
 
-namespace RedeSocial.API.Domain
+namespace RedeSocial.Web.ViewModel.Post
 {
-    public class CommentRequest
+    public class CommentRequestViewModel
     {
         public Guid PostId { get; set; }
         public string userName { get; set; }

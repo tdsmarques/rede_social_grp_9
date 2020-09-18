@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace RedeSocial.Domain.Post
+namespace RedeSocial.Web.ViewModel.Post
 {
-    public class Post
+    public class PostTimeLineViewModel
     {
         public Guid Id { get; set; }
         public Guid AccountId { get; set; }
@@ -12,5 +12,6 @@ namespace RedeSocial.Domain.Post
         public string Message { get; set; }
         public string ImageUrl { get; set; }
         public DateTime PublishDateTime { get; set; }
+        public List<Domain.Post.Comment> Comments { get; set; }
     }
 }

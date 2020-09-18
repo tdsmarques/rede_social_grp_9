@@ -2,37 +2,33 @@
     ViewData["Title"] = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model RedeSocial.Web.ViewModel.Account.AboutViewModel
 <div class="container">
     <div class="panel-body">
         <div class="row">
             <div class="col-md-3 col-lg-3 mt-2 ml-2">
-                <img alt="" style="width:180px;" title="" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
+                <img alt="" style="width:180px;" title="" class="img-circle" src="@Model.user.ImageUrl" data-original-title="Usuario">
             </div>
             <div class="col-md-6 col-lg-6">
-                <strong>Information</strong><br>
+                <strong>Informações Pessoais</strong><br>
                 <div class="table-responsive">
                     <table class="table table-user-information">
                         <tbody>
                             <tr>
-                                <td><strong>About</strong></td>
-                                <td class="text-primary">Developer of web applications, JavaScript, PHP, Python, Node.js, etc..</td>
+                                <td><strong>Nome</strong></td>
+                                <td class="text-primary">@Model.user.Name</td>
                             </tr>
                             <tr>
-                                <td><strong>Name</strong></td>
-                                <td class="text-primary">Bootdey</td>
-                            </tr>
-                            <tr>
-                                <td><strong>User</strong></td>
-                                <td class="text-primary">bootnipets</td>
+                                <td><strong>Usuario</strong></td>
+                                <td class="text-primary">@Model.user.UserName</td>
                             </tr>
                             <tr>
                                 <td><strong>Email</strong></td>
-                                <td class="text-primary">noreply@email.com</td>
+                                <td class="text-primary">@Model.user.Email</td>
                             </tr>
                             <tr>
-                                <td><strong>created</strong></td>    
-                                <td class="text-primary">20 jul 2014 </td>
+                                <td><strong>Data de Nascimento</strong></td>    
+                                <td class="text-primary">@Model.user.Birthday</td>
                             </tr>
                         </tbody>
                     </table>

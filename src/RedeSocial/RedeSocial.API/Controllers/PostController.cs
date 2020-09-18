@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using RedeSocial.API.Domain;
@@ -29,6 +30,14 @@ namespace RedeSocial.API.Controllers
         {
             postService.Create(post);
             return Ok("Post criado com Sucesso");
+        }
+        
+        [Route("get")]
+        [HttpPost]
+        public ActionResult GetPostById([FromBody] Guid idPost)
+        {
+            var post = postService.GetPostById(idPost);
+            return Ok(post);
         }
     }
 }

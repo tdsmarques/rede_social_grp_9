@@ -10,7 +10,7 @@ namespace RedeSocial.Repository.Context
         public DbSet<Domain.Account.Role> Roles { get; set; }
         public DbSet<Domain.Post.Post> Posts { get; set; }
         public DbSet<Domain.Post.Comment> Comments { get; set; }
-        
+
         public static readonly ILoggerFactory LoggerFactory =
             Microsoft.Extensions.Logging.LoggerFactory.Create(builder => { builder.AddConsole(); });
         

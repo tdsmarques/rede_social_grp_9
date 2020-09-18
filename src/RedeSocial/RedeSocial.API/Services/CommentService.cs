@@ -19,33 +19,23 @@ namespace RedeSocial.API.Services
         public void Create(CommentRequest commentRequest)
         {
             var user = _redeSocialDb.Accounts.FirstOrDefault(x => x.UserName == commentRequest.userName);
-            var post = _redeSocialDb.Posts.FirstOrDefault(x => x.Id == Guid.Parse(commentRequest.PostId));
+            var post = _redeSocialDb.Posts.FirstOrDefault(x => x.Id == commentRequest.PostId);
             var comment = new Comment();
-
             if (user != null) comment.UserId = user.Id;
             if (post != null) comment.PostId = post.Id;
             
             comment.Message = commentRequest.Message;
             comment.PublishDateTime = DateTime.Now;
-
-            if (post.Comments == null)
-            {
-                var comments = new List<Comment>();
-                comments.Add(comment);
-                post.Comments = comments;
-            }
-            else
-            {
-                post.Comments.Add(comment);
-            }
+            comment.UserImageUrl = user.ImageUrl;
+            comment.userName = user.UserName;
 
             _redeSocialDb.Comments.Add(comment);
             _redeSocialDb.SaveChanges();
         }
         
-        public List<Comment> GetAllPostComment()
-        {
-            var comments =  _redeSocialDb.Comments.ToList();
+        public List<Comment> GetAllPostComment(Guid id)
+        { 
+            var comments = _redeSocialDb.Comments.ToList().FindAll(x=> x.PostId == id);
             return comments;
         }
         

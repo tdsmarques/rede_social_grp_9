@@ -29,8 +29,8 @@ namespace RedeSocial.Repository.Post
 
         public List<Comment> GetAllPostComments(Guid guid)
         {
-            var post = GetPostById(guid);
-            return post.Comments;
+            var comments = Context.Comments.ToList().FindAll(x=> x.PostId == guid);
+            return comments;
         }
 
         public Domain.Account.Account GetAccountByName(string name)
