@@ -25,5 +25,4 @@ Para executar o jogo:
 
 * [Tiago Marques](https://github.com/tdsmarques)
 * [Carlos André](https://github.com/cnoronha843)
-* [Douglas Mendes](https://github.com/douglasmendes95)
 * [Bruno Feijó](https://github.com/feijobruno)
